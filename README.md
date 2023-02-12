@@ -1,3 +1,11 @@
+### Hi there 👋
+
+I'm Marc Shen, an astronomy student from Beijing Normal University in China🇨🇳.
+You can also call me as 梴湉ChānTián.
+
+[![linkedin](https://img.shields.io/badge/connect-blue?logo=linkedin)](https://www.linkedin.com/in/songyu-shen) [![tweet](https://img.shields.io/badge/tweet-blue?logo=twitter&color=1da1f2&logoColor=white)](https://twitter.com/ChanTian01) [![xbox](https://img.shields.io/badge/xbox-blue?logo=xbox&color=0f7c0f&logoColor=white)](https://account.xbox.com/en-us/profile?gamertag=songyushen) [![steam](https://img.shields.io/badge/steam-blue?logo=steam&color=174369&logoColor=white)](https://steamcommunity.com/profiles/76561198812599127/)
+
+
 
 
 <!--
@@ -27,7 +35,7 @@ Here are some ideas to get you started:
       /:/  /     \:\ \/__/     \:\  \    \:\  \    \:\/:/  /  
      /:/  /       \:\__\        \:\__\    \:\__\    \::/  /   
      \/__/         \/__/         \/__/     \/__/     \/__/    
-     
+
 <strong>Hi, I am ChanTian 梴湉!👋 </strong>
 
 <strong>An astronomy student from China🇨🇳. </strong>
@@ -40,6 +48,8 @@ Here are some ideas to get you started:
 
 <img width="500px"  alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=marc-shen&count_private=true&show_icons=true"/>
 
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=marc-shen&langs_count=8&layout=compact)
+
 
 ### 🛠 &nbsp;Tech Stack
 
@@ -49,5 +59,9 @@ Here are some ideas to get you started:
 
 
 ### 🛳 &nbsp;Your ticket ID for this visit
+
+
+
 <img src="https://profile-counter.glitch.me/marc-shen/count.svg" />
+
 
