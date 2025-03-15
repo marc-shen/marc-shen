@@ -60,7 +60,7 @@ $$    $$/ $$ |  $$ |$$    $$ |$$ |  $$ | $$ |   $$ |$$    $$ |$$ |  $$ |
 
 ### 🛠 &nbsp;Tech Stack
 
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=marc-shen&langs_count=8&layout=compact)
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=marc-shen&hide=javascript,html,Astro,MDX,CSS,SCSS,TypeScript&langs_count=8&layout=compact)
 
 ### 🤝🏻 &nbsp;Connect with Me
 
