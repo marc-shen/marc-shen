@@ -3,9 +3,7 @@
 I'm Marc Shen, an astronomy student from Beijing Normal University in China🇨🇳.
 You can also call me as 梴湉ChānTián.
 
-[![linkedin](https://img.shields.io/badge/linkedin-blue?logo=linkedin)](https://www.linkedin.com/in/songyu-shen) [![steam](https://img.shields.io/badge/steam-blue?logo=steam&color=174369&logoColor=white)](https://steamcommunity.com/profiles/76561198812599127/)
-
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Songyu_Shen-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/songyu-shen) [![steam](https://img.shields.io/badge/steam-blue?logo=steam&color=174369&logoColor=white)](https://steamcommunity.com/profiles/76561198812599127/)
 
 <!--
 **marc-shen/marc-shen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
