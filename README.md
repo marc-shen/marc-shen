@@ -75,9 +75,51 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 
 <!--START_SECTION:waka-->
 
+**🐱 My GitHub Data**
+
+> 📦 804.1 MB Used in GitHub's Storage
+> 
+> 🏆 240 Contributions in the Year 2026
+> 
+> 📜 46 Public Repositories
+> 
+> 🔑 11 Private Repositories
+> 
+> 🗓️ Joined GitHub 6 years ago
+
+**I'm a Night 🦉**
+
 ```text
-待 waka readme stats workflow 首次运行后自动填充
+🌞 Morning                30 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.71 % 
+🌆 Daytime                110 commits         ██████░░░░░░░░░░░░░░░░░░░   24.61 % 
+🌃 Evening                183 commits         ██████████░░░░░░░░░░░░░░░   40.94 % 
+🌙 Night                  124 commits         ███████░░░░░░░░░░░░░░░░░░   27.74 % 
 ```
+
+📅 **I'm Most Productive on Monday**
+
+```text
+Monday                   100 commits         ██████░░░░░░░░░░░░░░░░░░░   22.37 % 
+Tuesday                  83 commits          █████░░░░░░░░░░░░░░░░░░░░   18.57 % 
+Wednesday                66 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.77 % 
+Thursday                 66 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.77 % 
+Friday                   56 commits          ███░░░░░░░░░░░░░░░░░░░░░░   12.53 % 
+Saturday                 29 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.49 % 
+Sunday                   47 commits          ███░░░░░░░░░░░░░░░░░░░░░░   10.51 % 
+```
+
+**I Mostly Code in Python**
+
+```text
+Python                   4 repos             ████████░░░░░░░░░░░░░░░░░   30.77 % 
+Fortran                  3 repos             ██████░░░░░░░░░░░░░░░░░░░   23.08 % 
+Jupyter Notebook         3 repos             ██████░░░░░░░░░░░░░░░░░░░   23.08 % 
+Emacs Lisp               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.69 % 
+Astro                    1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.69 % 
+Makefile                 1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.69 % 
+```
+
+ Last Updated on 30/08/2026 09:38:41 UTC
 
 <!--END_SECTION:waka-->
 
