@@ -63,11 +63,13 @@ def commits(n):
 
 
 PROFILE_Q = """
-query($login:String!) {
+query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
     createdAt
-    repositories(ownerAffiliations:OWNER, privacy:PUBLIC) { totalCount }
-    contributionsCollection { contributionCalendar { totalContributions } }
+    repositories(ownerAffiliations:OWNER, privacy:PUBLIC, isFork:false) { totalCount }
+    contributionsCollection(from:$from, to:$to) {
+      contributionCalendar { totalContributions }
+    }
   }
 }
 """
@@ -100,7 +102,13 @@ query($login:String!, $cursor:String) {
 
 
 def collect():
-    profile = graphql(PROFILE_Q, login=USER)["user"]
+    now = datetime.now(timezone.utc)
+    year_start = datetime(now.year, 1, 1, tzinfo=timezone.utc)
+    profile = graphql(
+        PROFILE_Q,
+        login=USER,
+        **{"from": year_start.isoformat(), "to": now.isoformat()},
+    )["user"]
 
     repos, cursor = [], None
     while True:
@@ -145,7 +153,7 @@ def build(profile, disk, hours, weekdays, languages):
         f"> \U0001f3c6 {contributions:,} Contributions in the Year "
         f"{datetime.now(TZ).year}",
         "> ",
-        f"> \U0001f4dc {profile['repositories']['totalCount']} Public Repositories",
+        f"> \U0001f4dc {profile['repositories']['totalCount']} Public Repositories (excluding forks)",
         "> ",
         f"> \U0001f5d3️ Joined GitHub {years} years ago",
         "",
