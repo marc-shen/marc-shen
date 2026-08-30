@@ -77,9 +77,9 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 
 **🐱 My GitHub Data**
 
-> 📦 102.6 MB Used in GitHub's Storage
+> 📦 804.1 MB Used in GitHub's Storage
 > 
-> 🏆 210 Contributions in the Year 2026
+> 🏆 209 Contributions in the Year 2026
 > 
 > 📜 9 Public Repositories (excluding forks)
 > 
@@ -88,40 +88,38 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 **I'm a Night 🦉**
 
 ```text
-🌞 Morning                8 commits           █░░░░░░░░░░░░░░░░░░░░░░░░   04.04 % 
-🌆 Daytime                59 commits          ███████░░░░░░░░░░░░░░░░░░   29.80 % 
-🌃 Evening                72 commits          █████████░░░░░░░░░░░░░░░░   36.36 % 
-🌙 Night                  59 commits          ███████░░░░░░░░░░░░░░░░░░   29.80 % 
+🌞 Morning                30 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.65 % 
+🌆 Daytime                111 commits         ██████░░░░░░░░░░░░░░░░░░░   24.61 % 
+🌃 Evening                186 commits         ██████████░░░░░░░░░░░░░░░   41.24 % 
+🌙 Night                  124 commits         ███████░░░░░░░░░░░░░░░░░░   27.49 % 
 ```
 
-📅 **I'm Most Productive on Thursday**
+📅 **I'm Most Productive on Monday**
 
 ```text
-Monday                   17 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.59 % 
-Tuesday                  8 commits           █░░░░░░░░░░░░░░░░░░░░░░░░   04.04 % 
-Wednesday                33 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
-Thursday                 48 commits          ██████░░░░░░░░░░░░░░░░░░░   24.24 % 
-Friday                   36 commits          █████░░░░░░░░░░░░░░░░░░░░   18.18 % 
-Saturday                 22 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.11 % 
-Sunday                   34 commits          ████░░░░░░░░░░░░░░░░░░░░░   17.17 % 
+Monday                   100 commits         ██████░░░░░░░░░░░░░░░░░░░   22.17 % 
+Tuesday                  83 commits          █████░░░░░░░░░░░░░░░░░░░░   18.40 % 
+Wednesday                66 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.63 % 
+Thursday                 66 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.63 % 
+Friday                   56 commits          ███░░░░░░░░░░░░░░░░░░░░░░   12.42 % 
+Saturday                 29 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.43 % 
+Sunday                   51 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.31 % 
 ```
 
-**I Mostly Code in Astro**
+**I Mostly Code in Python**
 
 ```text
-Astro                    3,570 lines         ██████░░░░░░░░░░░░░░░░░░░   25.00 % 
-Jupyter Notebook         3,377 lines         ██████░░░░░░░░░░░░░░░░░░░   23.65 % 
-Python                   1,989 lines         ███░░░░░░░░░░░░░░░░░░░░░░   13.93 % 
-SCSS                     1,638 lines         ███░░░░░░░░░░░░░░░░░░░░░░   11.47 % 
-Emacs Lisp               1,385 lines         ██░░░░░░░░░░░░░░░░░░░░░░░   09.70 % 
-TypeScript               1,036 lines         ██░░░░░░░░░░░░░░░░░░░░░░░   07.25 % 
-Lua                      567 lines           █░░░░░░░░░░░░░░░░░░░░░░░░   03.97 % 
-Shell                    382 lines           █░░░░░░░░░░░░░░░░░░░░░░░░   02.68 % 
-Fortran                  256 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   01.79 % 
-JavaScript               80 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.56 % 
+Python                   25,526 lines        ██████████████░░░░░░░░░░░   54.20 % 
+Fortran                  17,550 lines        █████████░░░░░░░░░░░░░░░░   37.26 % 
+Emacs Lisp               1,385 lines         █░░░░░░░░░░░░░░░░░░░░░░░░   02.94 % 
+CMake                    1,151 lines         █░░░░░░░░░░░░░░░░░░░░░░░░   02.44 % 
+Shell                    811 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   01.72 % 
+Lua                      567 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   01.20 % 
+make                     84 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 % 
+DOS Batch                26 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 % 
 ```
 
- Last Updated on 30/08/2026 11:53:36 UTC
+ Last Updated on 30/08/2026 12:16:32 UTC
 
 <!--END_SECTION:waka-->
 

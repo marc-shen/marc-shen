@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from collections import Counter
@@ -18,6 +19,13 @@ API = "https://api.github.com/graphql"
 TOKEN = os.environ["GH_TOKEN"]
 USER = os.environ.get("GH_USER", "marc-shen")
 TZ = timezone(timedelta(hours=int(os.environ.get("UTC_OFFSET", "8"))))
+
+# 网页/静态站项目：算的是模板和样式，不代表日常写的代码
+EXCLUDE_REPOS = {
+    name.strip()
+    for name in os.environ.get("EXCLUDE_REPOS", "Dream-Quest").split(",")
+    if name.strip()
+}
 
 BAR_LEN = 25
 FULL, EMPTY = "█", "░"
@@ -61,7 +69,19 @@ LANG_ALIASES = {
 }
 
 # 计入行数时忽略的非代码格式
-SKIP_LANGS = "JSON,YAML,SVG,Markdown,Text,TOML,INI,XML,CSV,HTML"
+# 数据/标记格式与 notebook 不计入代码行数
+SKIP_LANGS = ",".join([
+    "JSON", "YAML", "SVG", "Markdown", "Text", "TOML", "INI", "XML", "CSV",
+    "HTML", "Jupyter Notebook", "reStructuredText", "TeX", "SQL Data", "Diff",
+    "VSCode Workspace", "Windows Resource File",
+])
+
+# 构建产物、依赖、文档生成目录里的代码不是自己写的
+EXCLUDE_DIRS = ",".join([
+    "node_modules", "vendor", "dist", "build", "_build", "_static",
+    "site-packages", ".venv", "venv", "third_party", "external",
+    "egg-info", ".eggs",
+])
 
 
 def loc_by_language(names):
@@ -70,22 +90,33 @@ def loc_by_language(names):
     cloc 原生支持 .ipynb，只数代码单元，不会把 base64 输出图算成代码。
     """
     cloc = os.environ.get("CLOC", "cloc")
-    counts = Counter()
+    counts, failed = Counter(), []
     workdir = tempfile.mkdtemp(prefix="loc-")
     try:
         for name in names:
             target = os.path.join(workdir, name)
-            clone = subprocess.run(
-                ["git", "clone", "--quiet", "--depth", "1", "--single-branch",
-                 f"https://github.com/{USER}/{name}.git", target],
-                capture_output=True,
-            )
-            if clone.returncode != 0:
-                print(f"skip {name}: clone failed", file=sys.stderr)
+            for attempt in range(3):
+                clone = subprocess.run(
+                    ["git", "clone", "--quiet", "--depth", "1", "--single-branch",
+                     f"https://x-access-token:{TOKEN}@github.com/{USER}/{name}.git",
+                     target],
+                    capture_output=True, text=True,
+                )
+                if clone.returncode == 0:
+                    break
+                shutil.rmtree(target, ignore_errors=True)
+                time.sleep(2 * (attempt + 1))
+            else:
+                # 静默跳过会让统计结果悄悄失真，宁可让这次运行显式失败
+                failed.append(f"{name}: {clone.stderr.strip()[:200]}")
                 continue
+            time.sleep(1)
+
+        if failed:
+            raise RuntimeError("无法克隆以下仓库:\n  " + "\n  ".join(failed))
 
         command = [cloc, "--json", "--quiet",
-                   "--exclude-dir=node_modules,vendor,dist,build",
+                   "--exclude-dir=" + EXCLUDE_DIRS,
                    f"--exclude-lang={SKIP_LANGS}", workdir]
         if cloc.endswith(".pl"):
             command.insert(0, "perl")
@@ -133,7 +164,7 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 REPOS_Q = """
 query($login:String!, $cursor:String) {
   user(login:$login) {
-    repositories(first:50, after:$cursor, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC) {
+    repositories(first:50, after:$cursor, ownerAffiliations:OWNER, isFork:false) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name
@@ -187,7 +218,8 @@ def collect():
             hours[when.hour] += 1
             weekdays[when.strftime("%A")] += 1
 
-    return profile, disk, hours, weekdays, loc_by_language(names)
+    counted = [n for n in names if n not in EXCLUDE_REPOS]
+    return profile, disk, hours, weekdays, loc_by_language(counted)
 
 
 def build(profile, disk, hours, weekdays, languages):

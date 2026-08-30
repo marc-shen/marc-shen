@@ -26,9 +26,12 @@ jobs:
 
       - name: generate stats section
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 私有仓库的行数统计需要一个有 repo 权限的 PAT，存成 GH_TOKEN。
+          # 没配时自动退回内置 token，届时只统计公开仓库。
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
           UTC_OFFSET: "8"
+          EXCLUDE_REPOS: "Dream-Quest"
           CLOC: ${{ runner.temp }}/cloc.pl
         run: python3 scripts/gen_stats.py
 
