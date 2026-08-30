@@ -79,11 +79,9 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 
 > 📦 102.6 MB Used in GitHub's Storage
 > 
-> 🏆 238 Contributions in the Year 2026
+> 🏆 241 Contributions in the Year 2026
 > 
 > 📜 46 Public Repositories
-> 
-> 🔑 0 Private Repositories
 > 
 > 🗓️ Joined GitHub 6 years ago
 
@@ -108,18 +106,22 @@ Saturday                 22 commits          ███░░░░░░░░�
 Sunday                   31 commits          ████░░░░░░░░░░░░░░░░░░░░░   15.90 % 
 ```
 
-**I Mostly Code in Fortran**
+**I Mostly Code in Python**
 
 ```text
-Fortran                  1 repo              ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
-Python                   1 repo              ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
-Emacs Lisp               1 repo              ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
-Astro                    1 repo              ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
-Jupyter Notebook         1 repo              ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
-Makefile                 1 repo              ████░░░░░░░░░░░░░░░░░░░░░   16.67 % 
+Python                   3 repos             █████░░░░░░░░░░░░░░░░░░░░   21.43 % 
+Shell                    3 repos             █████░░░░░░░░░░░░░░░░░░░░   21.43 % 
+Fortran                  1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+Emacs Lisp               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+Lua                      1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+Astro                    1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+SCSS                     1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+MDX                      1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+TypeScript               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+JavaScript               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
 ```
 
- Last Updated on 30/08/2026 09:39:29 UTC
+ Last Updated on 30/08/2026 10:35:22 UTC
 
 <!--END_SECTION:waka-->
 

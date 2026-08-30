@@ -42,17 +42,24 @@ def bar(fraction):
     return FULL * filled + EMPTY * (BAR_LEN - filled)
 
 
-def render(rows, unit):
-    """rows: [(label, count)] -> anmol098 风格的等宽条形图。"""
-    total = sum(c for _, c in rows) or 1
+def repos_containing(n):
+    return f"{n:,} repo" + ("" if n == 1 else "s")
+
+
+def render(rows, describe):
+    """rows: [(label, value)] -> anmol098 风格的等宽条形图。"""
+    total = sum(v for _, v in rows) or 1
     out = []
-    for label, count in rows:
-        frac = count / total
-        noun = unit if count == 1 else unit + "s"
+    for label, value in rows:
+        frac = value / total
         out.append(
-            f"{label:<25}{f'{count:,} {noun}':<20}{bar(frac)}   {frac * 100:05.2f} % "
+            f"{label:<25}{describe(value):<20}{bar(frac)}   {frac * 100:05.2f} % "
         )
     return "\n".join(out)
+
+
+def commits(n):
+    return f"{n:,} commit" + ("" if n == 1 else "s")
 
 
 PROFILE_Q = """
@@ -60,7 +67,6 @@ query($login:String!) {
   user(login:$login) {
     createdAt
     repositories(ownerAffiliations:OWNER, privacy:PUBLIC) { totalCount }
-    privateRepos: repositories(ownerAffiliations:OWNER, privacy:PRIVATE) { totalCount }
     contributionsCollection { contributionCalendar { totalContributions } }
   }
 }
@@ -69,12 +75,14 @@ query($login:String!) {
 REPOS_Q = """
 query($login:String!, $cursor:String) {
   user(login:$login) {
-    repositories(first:50, after:$cursor, ownerAffiliations:OWNER, isFork:false) {
+    repositories(first:50, after:$cursor, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name
         diskUsage
-        primaryLanguage { name }
+        languages(first:10, orderBy:{field:SIZE, direction:DESC}) {
+          edges { size node { name } }
+        }
         defaultBranchRef {
           target {
             ... on Commit {
@@ -105,8 +113,8 @@ def collect():
     hours, weekdays, languages, disk = Counter(), Counter(), Counter(), 0
     for repo in repos:
         disk += repo.get("diskUsage") or 0
-        if repo.get("primaryLanguage"):
-            languages[repo["primaryLanguage"]["name"]] += 1
+        for edge in (repo.get("languages") or {}).get("edges", []):
+            languages[edge["node"]["name"]] += 1
         ref = repo.get("defaultBranchRef") or {}
         target = ref.get("target") or {}
         for commit in (target.get("history") or {}).get("nodes", []):
@@ -139,8 +147,6 @@ def build(profile, disk, hours, weekdays, languages):
         "> ",
         f"> \U0001f4dc {profile['repositories']['totalCount']} Public Repositories",
         "> ",
-        f"> \U0001f511 {profile['privateRepos']['totalCount']} Private Repositories",
-        "> ",
         f"> \U0001f5d3️ Joined GitHub {years} years ago",
         "",
     ]
@@ -154,7 +160,7 @@ def build(profile, disk, hours, weekdays, languages):
     by_bucket = [(name, sum(hours[h] for h in span)) for name, span in buckets]
     peak = max(by_bucket, key=lambda kv: kv[1])[0] if any(hours.values()) else ""
     owl = "I'm a Night \U0001f989" if "Night" in peak or "Evening" in peak else "I'm an Early \U0001f424"
-    blocks += [f"**{owl}**", "", "```text", render(by_bucket, "commit"), "```", ""]
+    blocks += [f"**{owl}**", "", "```text", render(by_bucket, commits), "```", ""]
 
     order = [
         "Monday", "Tuesday", "Wednesday", "Thursday",
@@ -166,7 +172,7 @@ def build(profile, disk, hours, weekdays, languages):
             f"\U0001f4c5 **I'm Most Productive on {best}**",
             "",
             "```text",
-            render([(d, weekdays[d]) for d in order], "commit"),
+            render([(d, weekdays[d]) for d in order], commits),
             "```",
             "",
         ]
@@ -177,7 +183,7 @@ def build(profile, disk, hours, weekdays, languages):
             f"**I Mostly Code in {top}**",
             "",
             "```text",
-            render(languages.most_common(8), "repo"),
+            render(languages.most_common(10), repos_containing),
             "```",
             "",
         ]
