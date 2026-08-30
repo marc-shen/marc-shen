@@ -25,20 +25,21 @@
 
 ```console
 marc@bnu:~$ whoami --verbose
-┌────────────────────────────────────────────────────────────┐
-│  name      : Songyu Marc Shen                              │
-│  role      : Astronomy student, Beijing Normal University  │
-│  location  : Beijing, China                                │
-│  research  : PIC plasma simulations / Fast Radio Bursts    │
-│  stack     : Fortran, Python, C++, Jupyter, LaTeX          │
-│  editor    : Helix + VS Code (vim keys, always)            │
-│  shell     : zsh + tmux, on macOS and HPC clusters         │
-│  fun_fact  : I compile telescope software for fun          │
-└────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────┐
+│  name      : Songyu Marc Shen                                         │
+│  role      : Astronomy student, Beijing Normal University             │
+│  location  : Beijing, China                                           │
+│  research  : PIC plasma simulations / Fast Radio Bursts               │
+│  stack     : Fortran, Python, C++, Jupyter, LaTeX                     │
+│  editor    : Emacs with helix-mode                                    │
+│  shell     : zsh on macOS and HPC clusters                            │
+│  message   : Don't be like the Visigoths, who crouch in the ruins of  │
+│              Rome's faded glory yet proclaim themselves civilized.    │
+└───────────────────────────────────────────────────────────────────────┘
 
 marc@bnu:~$ cat /etc/motd
-"Astronomy compels the soul to look upward,
- and leads us from this world to another." — Plato
+"When we try to pick out anything by itself,
+ we find it hitched to everything else in the universe." — John Muir
 ```
 
 ---
@@ -141,7 +142,7 @@ marc@bnu:~$ cat ~/.config/toolchain.txt
 ![Linux](https://img.shields.io/badge/Linux-0D1117?style=for-the-badge&logo=linux&logoColor=00FF41)
 ![macOS](https://img.shields.io/badge/macOS-0D1117?style=for-the-badge&logo=apple&logoColor=00FF41)
 ![Git](https://img.shields.io/badge/Git-0D1117?style=for-the-badge&logo=git&logoColor=00FF41)
-![Helix](https://img.shields.io/badge/Helix-0D1117?style=for-the-badge&logo=helix&logoColor=00FF41)
+![Emacs](https://img.shields.io/badge/Emacs-0D1117?style=for-the-badge&logo=gnuemacs&logoColor=00FF41)
 ![Astro](https://img.shields.io/badge/Astro-0D1117?style=for-the-badge&logo=astro&logoColor=00FF41)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-0D1117?style=for-the-badge&logo=cloudflare&logoColor=00FF41)
 
