@@ -75,7 +75,7 @@ marc@bnu:~$ git log --all --stat --author="Marc Shen" | summarize
 
 <div align="center">
 
-<img width="78%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark" alt="Profile summary" />
+<img width="78%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark&name=marc-shen%20(Marc%20Shen)" alt="Profile summary" />
 
 <img width="78%" src="https://streak-stats.demolab.com?user=marc-shen&hide_border=true&theme=chartreuse-dark&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=C9D1D9&dates=8B949E" alt="Commit streak" />
 
