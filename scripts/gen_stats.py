@@ -5,7 +5,10 @@ ASCII 统计块。数据全部来自 GitHub GraphQL，不依赖 WakaTime。"""
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import urllib.error
 import urllib.request
 from collections import Counter
@@ -42,8 +45,61 @@ def bar(fraction):
     return FULL * filled + EMPTY * (BAR_LEN - filled)
 
 
-def repos_containing(n):
-    return f"{n:,} repo" + ("" if n == 1 else "s")
+def lines_of_code(n):
+    return f"{n:,} line" + ("" if n == 1 else "s")
+
+
+# cloc 把同一门语言拆得很细，合并成一般人认得的名字
+LANG_ALIASES = {
+    "Bourne Shell": "Shell",
+    "Bourne Again Shell": "Shell",
+    "Fortran 77": "Fortran",
+    "Fortran 90": "Fortran",
+    "Fortran 95": "Fortran",
+    "Lisp": "Emacs Lisp",
+    "C++": "C++",
+}
+
+# 计入行数时忽略的非代码格式
+SKIP_LANGS = "JSON,YAML,SVG,Markdown,Text,TOML,INI,XML,CSV,HTML"
+
+
+def loc_by_language(names):
+    """浅克隆每个仓库并用 cloc 统计各语言实际代码行数。
+
+    cloc 原生支持 .ipynb，只数代码单元，不会把 base64 输出图算成代码。
+    """
+    cloc = os.environ.get("CLOC", "cloc")
+    counts = Counter()
+    workdir = tempfile.mkdtemp(prefix="loc-")
+    try:
+        for name in names:
+            target = os.path.join(workdir, name)
+            clone = subprocess.run(
+                ["git", "clone", "--quiet", "--depth", "1", "--single-branch",
+                 f"https://github.com/{USER}/{name}.git", target],
+                capture_output=True,
+            )
+            if clone.returncode != 0:
+                print(f"skip {name}: clone failed", file=sys.stderr)
+                continue
+
+        command = [cloc, "--json", "--quiet",
+                   "--exclude-dir=node_modules,vendor,dist,build",
+                   f"--exclude-lang={SKIP_LANGS}", workdir]
+        if cloc.endswith(".pl"):
+            command.insert(0, "perl")
+        result = subprocess.run(command, capture_output=True, text=True)
+        if result.returncode != 0 or not result.stdout.strip():
+            print(f"cloc failed: {result.stderr[:400]}", file=sys.stderr)
+            return counts
+        for language, stats in json.loads(result.stdout).items():
+            if language in ("header", "SUM"):
+                continue
+            counts[LANG_ALIASES.get(language, language)] += stats["code"]
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+    return counts
 
 
 def render(rows, describe):
@@ -82,9 +138,6 @@ query($login:String!, $cursor:String) {
       nodes {
         name
         diskUsage
-        languages(first:10, orderBy:{field:SIZE, direction:DESC}) {
-          edges { size node { name } }
-        }
         defaultBranchRef {
           target {
             ... on Commit {
@@ -118,11 +171,10 @@ def collect():
             break
         cursor = page["pageInfo"]["endCursor"]
 
-    hours, weekdays, languages, disk = Counter(), Counter(), Counter(), 0
+    hours, weekdays, disk, names = Counter(), Counter(), 0, []
     for repo in repos:
         disk += repo.get("diskUsage") or 0
-        for edge in (repo.get("languages") or {}).get("edges", []):
-            languages[edge["node"]["name"]] += 1
+        names.append(repo["name"])
         ref = repo.get("defaultBranchRef") or {}
         target = ref.get("target") or {}
         for commit in (target.get("history") or {}).get("nodes", []):
@@ -135,7 +187,7 @@ def collect():
             hours[when.hour] += 1
             weekdays[when.strftime("%A")] += 1
 
-    return profile, disk, hours, weekdays, languages
+    return profile, disk, hours, weekdays, loc_by_language(names)
 
 
 def build(profile, disk, hours, weekdays, languages):
@@ -191,7 +243,7 @@ def build(profile, disk, hours, weekdays, languages):
             f"**I Mostly Code in {top}**",
             "",
             "```text",
-            render(languages.most_common(10), repos_containing),
+            render(languages.most_common(10), lines_of_code),
             "```",
             "",
         ]

@@ -79,7 +79,7 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 
 > 📦 102.6 MB Used in GitHub's Storage
 > 
-> 🏆 208 Contributions in the Year 2026
+> 🏆 209 Contributions in the Year 2026
 > 
 > 📜 9 Public Repositories (excluding forks)
 > 
@@ -88,40 +88,40 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 **I'm a Night 🦉**
 
 ```text
-🌞 Morning                8 commits           █░░░░░░░░░░░░░░░░░░░░░░░░   04.08 % 
-🌆 Daytime                59 commits          ████████░░░░░░░░░░░░░░░░░   30.10 % 
-🌃 Evening                70 commits          █████████░░░░░░░░░░░░░░░░   35.71 % 
-🌙 Night                  59 commits          ████████░░░░░░░░░░░░░░░░░   30.10 % 
+🌞 Morning                8 commits           █░░░░░░░░░░░░░░░░░░░░░░░░   04.06 % 
+🌆 Daytime                59 commits          ███████░░░░░░░░░░░░░░░░░░   29.95 % 
+🌃 Evening                71 commits          █████████░░░░░░░░░░░░░░░░   36.04 % 
+🌙 Night                  59 commits          ███████░░░░░░░░░░░░░░░░░░   29.95 % 
 ```
 
 📅 **I'm Most Productive on Thursday**
 
 ```text
-Monday                   17 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.67 % 
-Tuesday                  8 commits           █░░░░░░░░░░░░░░░░░░░░░░░░   04.08 % 
-Wednesday                33 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.84 % 
-Thursday                 48 commits          ██████░░░░░░░░░░░░░░░░░░░   24.49 % 
-Friday                   36 commits          █████░░░░░░░░░░░░░░░░░░░░   18.37 % 
-Saturday                 22 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.22 % 
-Sunday                   32 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.33 % 
+Monday                   17 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.63 % 
+Tuesday                  8 commits           █░░░░░░░░░░░░░░░░░░░░░░░░   04.06 % 
+Wednesday                33 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.75 % 
+Thursday                 48 commits          ██████░░░░░░░░░░░░░░░░░░░   24.37 % 
+Friday                   36 commits          █████░░░░░░░░░░░░░░░░░░░░   18.27 % 
+Saturday                 22 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.17 % 
+Sunday                   33 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.75 % 
 ```
 
-**I Mostly Code in Python**
+**I Mostly Code in Astro**
 
 ```text
-Python                   3 repos             █████░░░░░░░░░░░░░░░░░░░░   21.43 % 
-Shell                    3 repos             █████░░░░░░░░░░░░░░░░░░░░   21.43 % 
-Fortran                  1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-Emacs Lisp               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-Lua                      1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-Astro                    1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-SCSS                     1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-MDX                      1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-TypeScript               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-JavaScript               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+Astro                    3,570 lines         ██████░░░░░░░░░░░░░░░░░░░   25.08 % 
+Jupyter Notebook         3,377 lines         ██████░░░░░░░░░░░░░░░░░░░   23.72 % 
+Python                   1,946 lines         ███░░░░░░░░░░░░░░░░░░░░░░   13.67 % 
+SCSS                     1,638 lines         ███░░░░░░░░░░░░░░░░░░░░░░   11.51 % 
+Emacs Lisp               1,385 lines         ██░░░░░░░░░░░░░░░░░░░░░░░   09.73 % 
+TypeScript               1,036 lines         ██░░░░░░░░░░░░░░░░░░░░░░░   07.28 % 
+Lua                      567 lines           █░░░░░░░░░░░░░░░░░░░░░░░░   03.98 % 
+Shell                    382 lines           █░░░░░░░░░░░░░░░░░░░░░░░░   02.68 % 
+Fortran                  256 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   01.80 % 
+JavaScript               80 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.56 % 
 ```
 
- Last Updated on 30/08/2026 11:23:20 UTC
+ Last Updated on 30/08/2026 11:53:02 UTC
 
 <!--END_SECTION:waka-->
 

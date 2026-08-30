@@ -18,11 +18,18 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: install cloc
+        run: |
+          curl -sL -o "$RUNNER_TEMP/cloc.pl" \
+            https://github.com/AlDanial/cloc/releases/download/v2.10/cloc-2.10.pl
+          perl "$RUNNER_TEMP/cloc.pl" --version
+
       - name: generate stats section
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
           UTC_OFFSET: "8"
+          CLOC: ${{ runner.temp }}/cloc.pl
         run: python3 scripts/gen_stats.py
 
       - name: commit if changed
