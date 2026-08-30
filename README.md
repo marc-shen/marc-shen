@@ -26,7 +26,7 @@
 ```console
 marc@bnu:~$ whoami --verbose
 ┌────────────────────────────────────────────────────────────┐
-│  name      : Marc Shen (Songyu Shen)                       │
+│  name      : Songyu Marc Shen                              │
 │  role      : Astronomy student, Beijing Normal University  │
 │  location  : Beijing, China                                │
 │  research  : PIC plasma simulations / Fast Radio Bursts    │
