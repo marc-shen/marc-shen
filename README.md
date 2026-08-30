@@ -15,8 +15,6 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3200&pause=900&color=00FF41&center=true&vCenter=true&width=520&lines=astronomy+student+%40+BNU;plasma+simulations+%26+fast+radio+bursts;Fortran+%2B+Python+%2B+too+many+dotfiles)](https://git.io/typing-svg)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Songyu_Shen-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/songyu-shen)
-[![Steam](https://img.shields.io/badge/Steam-marc--shen-174369?style=flat-square&logo=steam&logoColor=white)](https://steamcommunity.com/profiles/76561198812599127/)
 [![Website](https://img.shields.io/badge/Website-songyushen.com-0D1117?style=flat-square&logo=githubpages&logoColor=00FF41)](https://songyushen.com/)
 [![Blog](https://img.shields.io/badge/Blog-blog.stic.work-1F2430?style=flat-square&logo=astro&logoColor=FF5D01)](https://blog.stic.work)
 ![Profile views](https://komarev.com/ghpvc/?username=marc-shen&style=flat-square&color=00FF41&label=visitors)
@@ -68,34 +66,22 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 ---
 
-```console
-marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
-```
-
 <!--START_SECTION:waka-->
 
-**🐱 My GitHub Data**
+```console
+marc@bnu:~$ gh-stats --summary
+storage        926.5 MB
+contributions  208 in 2026
+public repos   9 (forks excluded)
+member since   2019 (6 years)
 
-> 📦 926.5 MB Used in GitHub's Storage
-> 
-> 🏆 208 Contributions in the Year 2026
-> 
-> 📜 9 Public Repositories (excluding forks)
-> 
-> 🗓️ Joined GitHub 6 years ago
-
-**I'm a Night 🦉**
-
-```text
+marc@bnu:~$ gh-stats --commits --group-by=daypart
 🌞 Morning                30 commits          █░░░░░░░░░░░░░░░░░░░░░░░░   05.42 % 
 🌆 Daytime                132 commits         ██████░░░░░░░░░░░░░░░░░░░   23.87 % 
 🌃 Evening                220 commits         ██████████░░░░░░░░░░░░░░░   39.78 % 
 🌙 Night                  171 commits         ████████░░░░░░░░░░░░░░░░░   30.92 % 
-```
 
-📅 **I'm Most Productive on Monday**
-
-```text
+marc@bnu:~$ gh-stats --commits --group-by=weekday
 Monday                   109 commits         █████░░░░░░░░░░░░░░░░░░░░   19.71 % 
 Tuesday                  100 commits         █████░░░░░░░░░░░░░░░░░░░░   18.08 % 
 Wednesday                101 commits         █████░░░░░░░░░░░░░░░░░░░░   18.26 % 
@@ -103,11 +89,8 @@ Thursday                 91 commits          ████░░░░░░░�
 Friday                   66 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.93 % 
 Saturday                 32 commits          █░░░░░░░░░░░░░░░░░░░░░░░░   05.79 % 
 Sunday                   54 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   09.76 % 
-```
 
-**I Mostly Code in Python**
-
-```text
+marc@bnu:~$ cloc --no-web --no-notebooks ~/src
 Python                   50,195 lines        █████████████████░░░░░░░░   69.20 % 
 Fortran                  17,550 lines        ██████░░░░░░░░░░░░░░░░░░░   24.19 % 
 Emacs Lisp               1,385 lines         ░░░░░░░░░░░░░░░░░░░░░░░░░   01.91 % 
@@ -117,27 +100,12 @@ Lua                      567 lines           ░░░░░░░░░░░�
 MATLAB                   437 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.60 % 
 make                     84 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.12 % 
 DOS Batch                26 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
-```
 
- Last Updated on 30/08/2026 12:58:30 UTC
+marc@bnu:~$ date -u
+Sun Aug 30 13:10:21 UTC 2026
+```
 
 <!--END_SECTION:waka-->
-
----
-
-```console
-marc@bnu:~$ uptime && history | awk '{print $2}' | sort | uniq -c
-```
-
-<div align="center">
-
-<img width="72%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=marc-shen&theme=github_dark&utcOffset=8" alt="Productive time" />
-
-<br />
-
-<img width="92%" src="https://ghchart.rshah.org/00FF41/marc-shen" alt="Contribution chart" />
-
-</div>
 
 ---
 

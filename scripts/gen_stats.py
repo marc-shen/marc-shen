@@ -48,8 +48,20 @@ def graphql(query, **variables):
             "User-Agent": USER,
         },
     )
-    with urllib.request.urlopen(req, timeout=60) as r:
-        payload = json.load(r)
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                payload = json.load(r)
+            break
+        except urllib.error.HTTPError as err:
+            # 5xx 多为偶发，退避后重试；4xx 直接抛出
+            if err.code < 500 or attempt == 3:
+                raise
+            time.sleep(2 ** attempt)
+        except urllib.error.URLError:
+            if attempt == 3:
+                raise
+            time.sleep(2 ** attempt)
     if "errors" in payload:
         raise RuntimeError(payload["errors"])
     return payload["data"]
@@ -241,23 +253,21 @@ def collect():
 
 
 def build(profile, disk, hours, weekdays, languages):
+    """整段输出是一个仿 shell 会话，与 README 其余章节风格一致。"""
     joined = datetime.fromisoformat(profile["createdAt"].replace("Z", "+00:00"))
     years = max(1, int((datetime.now(timezone.utc) - joined).days / 365.25))
     contributions = profile["contributionsCollection"]["contributionCalendar"][
         "totalContributions"
     ]
+    year = datetime.now(TZ).year
 
-    blocks = [
-        "**\U0001f431 My GitHub Data**",
-        "",
-        f"> \U0001f4e6 {disk / 1000:,.1f} MB Used in GitHub's Storage",
-        "> ",
-        f"> \U0001f3c6 {contributions:,} Contributions in the Year "
-        f"{datetime.now(TZ).year}",
-        "> ",
-        f"> \U0001f4dc {profile['repositories']['totalCount']} Public Repositories (excluding forks)",
-        "> ",
-        f"> \U0001f5d3️ Joined GitHub {years} years ago",
+    lines = [
+        "```console",
+        "marc@bnu:~$ gh-stats --summary",
+        f"storage        {disk / 1000:,.1f} MB",
+        f"contributions  {contributions:,} in {year}",
+        f"public repos   {profile['repositories']['totalCount']} (forks excluded)",
+        f"member since   {joined.year} ({years} years)",
         "",
     ]
 
@@ -268,39 +278,33 @@ def build(profile, disk, hours, weekdays, languages):
         ("\U0001f319 Night", list(range(0, 6))),
     ]
     by_bucket = [(name, sum(hours[h] for h in span)) for name, span in buckets]
-    peak = max(by_bucket, key=lambda kv: kv[1])[0] if any(hours.values()) else ""
-    owl = "I'm a Night \U0001f989" if "Night" in peak or "Evening" in peak else "I'm an Early \U0001f424"
-    blocks += [f"**{owl}**", "", "```text", render(by_bucket, commits), "```", ""]
+    lines += [
+        "marc@bnu:~$ gh-stats --commits --group-by=daypart",
+        render(by_bucket, commits),
+        "",
+    ]
 
     order = [
         "Monday", "Tuesday", "Wednesday", "Thursday",
         "Friday", "Saturday", "Sunday",
     ]
     if weekdays:
-        best = max(order, key=lambda d: weekdays[d])
-        blocks += [
-            f"\U0001f4c5 **I'm Most Productive on {best}**",
-            "",
-            "```text",
+        lines += [
+            "marc@bnu:~$ gh-stats --commits --group-by=weekday",
             render([(d, weekdays[d]) for d in order], commits),
-            "```",
             "",
         ]
 
     if languages:
-        top = languages.most_common(1)[0][0]
-        blocks += [
-            f"**I Mostly Code in {top}**",
-            "",
-            "```text",
+        lines += [
+            "marc@bnu:~$ cloc --no-web --no-notebooks ~/src",
             render(languages.most_common(10), lines_of_code),
-            "```",
             "",
         ]
 
-    stamp = datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M:%S UTC")
-    blocks.append(f" Last Updated on {stamp}")
-    return "\n".join(blocks)
+    stamp = datetime.now(timezone.utc).strftime("%a %b %d %H:%M:%S UTC %Y")
+    lines += ["marc@bnu:~$ date -u", stamp, "```"]
+    return "\n".join(lines)
 
 
 def main():
