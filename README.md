@@ -70,20 +70,16 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 ---
 
 ```console
-marc@bnu:~$ git log --all --stat --author="Marc Shen" | summarize
+marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 ```
 
-<div align="center">
+<!--START_SECTION:waka-->
 
-<img width="78%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark&name=marc-shen%20(Marc%20Shen)" alt="Profile summary" />
+```text
+待 waka readme stats workflow 首次运行后自动填充
+```
 
-<img width="78%" src="https://streak-stats.demolab.com?user=marc-shen&hide_border=true&theme=chartreuse-dark&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=C9D1D9&dates=8B949E" alt="Commit streak" />
-
-<img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=marc-shen&theme=github_dark" alt="Repos per language" />
-<img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=marc-shen&theme=github_dark" alt="Most commit language" />
-<img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=marc-shen&theme=github_dark" alt="Stats" />
-
-</div>
+<!--END_SECTION:waka-->
 
 ---
 
