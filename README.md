@@ -18,7 +18,8 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Songyu_Shen-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/songyu-shen)
 [![Steam](https://img.shields.io/badge/Steam-marc--shen-174369?style=flat-square&logo=steam&logoColor=white)](https://steamcommunity.com/profiles/76561198812599127/)
-[![Blog](https://img.shields.io/badge/Blog-Dream--Quest-1F2430?style=flat-square&logo=astro&logoColor=FF5D01)](https://github.com/marc-shen/Dream-Quest)
+[![Website](https://img.shields.io/badge/Website-songyushen.com-0D1117?style=flat-square&logo=githubpages&logoColor=00FF41)](https://songyushen.com/)
+[![Blog](https://img.shields.io/badge/Blog-blog.stic.work-1F2430?style=flat-square&logo=astro&logoColor=FF5D01)](https://blog.stic.work)
 ![Profile views](https://komarev.com/ghpvc/?username=marc-shen&style=flat-square&color=00FF41&label=visitors)
 
 </div>
@@ -51,12 +52,13 @@ marc@bnu:~$ cat /etc/motd
 
 ```console
 marc@bnu:~$ ls -la ~/projects --sort=recent
-total 30
-drwxr-xr-x  research/    empi-fortran/       # EM PIC code, Fortran
+total 6
+drwxr-xr-x  research/    empi-fortran/       # EM PIC solver, Fortran
 drwxr-xr-x  research/    empi-work/          # analysis pipeline, Python
+drwxr-xr-x  research/    pic-tristan/        # Tristan-MP setups
 drwxr-xr-x  teaching/    computing-for-astronomy/
-drwxr-xr-x  web/         dream-quest/        # personal blog, Astro
-drwxr-xr-x  tools/       macos-astromator/
+drwxr-xr-x  web/         dream-quest/        # blog.stic.work, Astro
+drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 ```
 
 | repo | what it is | stack |
@@ -65,10 +67,9 @@ drwxr-xr-x  tools/       macos-astromator/
 | [**EMPi**](https://github.com/marc-shen/EMPi) | Numerical modeling of plasma-induced effects on Fast Radio Bursts | `Jupyter` `Python` |
 | [**empi-work**](https://github.com/marc-shen/empi-work) | Post-processing & visualization for the EMPi runs | `Python` `NumPy` |
 | [**computing-for-astronomy**](https://github.com/marc-shen/computing-for-astronomy) | *Why Computing for Astronomy?* — notes & lectures | `Makefile` `LaTeX` |
-| [**Dream-Quest**](https://github.com/marc-shen/Dream-Quest) | The way to Kadath — personal blog | `Astro` `TS` |
+| [**Dream-Quest**](https://github.com/marc-shen/Dream-Quest) | The way to Kadath — personal blog at [blog.stic.work](https://blog.stic.work) | `Astro` `TS` |
+| [**marc-shen.github.io**](https://github.com/marc-shen/marc-shen.github.io) | Personal site at [songyushen.com](https://songyushen.com/) — Jekyll / minimal-mistakes | `Jekyll` `JS` |
 | [**pic-tristan**](https://github.com/marc-shen/pic-tristan) | Tristan-MP setups & diagnostics for PIC experiments | `Fortran` |
-| [**BNU-teacher-stats**](https://github.com/marc-shen/BNU-teacher-stats) | Scraping + stats on BNU faculty data | `Jupyter` |
-| [**macos-astromator**](https://github.com/marc-shen/macos-astromator) | Automator scripts to launch astronomy software from a selection | `AppleScript` |
 
 ---
 
@@ -76,12 +77,12 @@ drwxr-xr-x  tools/       macos-astromator/
 
 <div align="center">
 
-<img width="46%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark" alt="Profile summary" />
-<img width="46%" src="https://streak-stats.demolab.com?user=marc-shen&hide_border=true&theme=chartreuse-dark&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=C9D1D9&dates=8B949E" alt="Commit streak" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark" alt="Profile summary" />
+<img width="49%" src="https://streak-stats.demolab.com?user=marc-shen&hide_border=true&theme=chartreuse-dark&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=C9D1D9&dates=8B949E" alt="Commit streak" />
 
-<img width="30%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=marc-shen&theme=github_dark" alt="Repos per language" />
-<img width="30%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=marc-shen&theme=github_dark" alt="Most commit language" />
-<img width="30%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=marc-shen&theme=github_dark" alt="Stats" />
+<img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=marc-shen&theme=github_dark" alt="Repos per language" />
+<img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=marc-shen&theme=github_dark" alt="Most commit language" />
+<img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=marc-shen&theme=github_dark" alt="Stats" />
 
 </div>
 
@@ -91,7 +92,7 @@ drwxr-xr-x  tools/       macos-astromator/
 
 <div align="center">
 
-<img width="62%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=marc-shen&theme=github_dark&utcOffset=8" alt="Productive time" />
+<img width="72%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=marc-shen&theme=github_dark&utcOffset=8" alt="Productive time" />
 
 <br />
 
