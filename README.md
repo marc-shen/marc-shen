@@ -26,8 +26,6 @@
 
 ---
 
-## `$ whoami`
-
 ```console
 marc@bnu:~$ whoami --verbose
 ┌────────────────────────────────────────────────────────────┐
@@ -47,8 +45,6 @@ marc@bnu:~$ cat /etc/motd
 ```
 
 ---
-
-## `$ ls -la ~/projects`
 
 ```console
 marc@bnu:~$ ls -la ~/projects --sort=recent
@@ -73,12 +69,15 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 ---
 
-## `$ git log --stat`
+```console
+marc@bnu:~$ git log --all --stat --author="Marc Shen" | summarize
+```
 
 <div align="center">
 
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark" alt="Profile summary" />
-<img width="49%" src="https://streak-stats.demolab.com?user=marc-shen&hide_border=true&theme=chartreuse-dark&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=C9D1D9&dates=8B949E" alt="Commit streak" />
+<img width="78%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=marc-shen&theme=github_dark" alt="Profile summary" />
+
+<img width="78%" src="https://streak-stats.demolab.com?user=marc-shen&hide_border=true&theme=chartreuse-dark&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=C9D1D9&dates=8B949E" alt="Commit streak" />
 
 <img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=marc-shen&theme=github_dark" alt="Repos per language" />
 <img width="32.5%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=marc-shen&theme=github_dark" alt="Most commit language" />
@@ -88,7 +87,9 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 ---
 
-## `$ uptime && history | tail`
+```console
+marc@bnu:~$ uptime && history | awk '{print $2}' | sort | uniq -c
+```
 
 <div align="center">
 
@@ -96,15 +97,15 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 <br />
 
-**contribution heatmap**
-
 <img width="92%" src="https://ghchart.rshah.org/00FF41/marc-shen" alt="Contribution chart" />
 
 </div>
 
 ---
 
-## `$ ./snake --eat-contributions`
+```console
+marc@bnu:~$ ./snake --eat-contributions --loop
+```
 
 <div align="center">
 
@@ -118,7 +119,9 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 ---
 
-## `$ cat toolchain.txt`
+```console
+marc@bnu:~$ cat ~/.config/toolchain.txt
+```
 
 <div align="center">
 
