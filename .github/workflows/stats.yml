@@ -32,6 +32,8 @@ jobs:
           GH_USER: ${{ github.repository_owner }}
           UTC_OFFSET: "8"
           EXCLUDE_REPOS: "Dream-Quest"
+          # fork 默认不计，这几个是自己在上面持续开发的
+          INCLUDE_FORKS: "EMPi"
           CLOC: ${{ runner.temp }}/cloc.pl
         run: python3 scripts/gen_stats.py
 

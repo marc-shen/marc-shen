@@ -27,6 +27,13 @@ EXCLUDE_REPOS = {
     if name.strip()
 }
 
+# fork 默认不计，但自己在上面持续开发的除外
+INCLUDE_FORKS = {
+    name.strip()
+    for name in os.environ.get("INCLUDE_FORKS", "EMPi").split(",")
+    if name.strip()
+}
+
 BAR_LEN = 25
 FULL, EMPTY = "█", "░"
 
@@ -71,9 +78,16 @@ LANG_ALIASES = {
 # 计入行数时忽略的非代码格式
 # 数据/标记格式与 notebook 不计入代码行数
 SKIP_LANGS = ",".join([
+    # 数据与标记格式
     "JSON", "YAML", "SVG", "Markdown", "Text", "TOML", "INI", "XML", "CSV",
-    "HTML", "Jupyter Notebook", "reStructuredText", "TeX", "SQL Data", "Diff",
-    "VSCode Workspace", "Windows Resource File",
+    "reStructuredText", "TeX", "SQL Data", "Diff", "VSCode Workspace",
+    "Windows Resource File",
+    # notebook（字节数量的是输出图，不是代码）
+    "Jupyter Notebook",
+    # 网页与前端
+    "HTML", "CSS", "SCSS", "Sass", "LESS", "Stylus", "JavaScript", "JSX",
+    "TypeScript", "TSX", "Vuejs Component", "Svelte", "Astro", "Handlebars",
+    "Pug", "Twig", "EJS", "Liquid",
 ])
 
 # 构建产物、依赖、文档生成目录里的代码不是自己写的
@@ -164,10 +178,11 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 REPOS_Q = """
 query($login:String!, $cursor:String) {
   user(login:$login) {
-    repositories(first:50, after:$cursor, ownerAffiliations:OWNER, isFork:false) {
+    repositories(first:50, after:$cursor, ownerAffiliations:OWNER) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name
+        isFork
         diskUsage
         defaultBranchRef {
           target {
@@ -204,8 +219,11 @@ def collect():
 
     hours, weekdays, disk, names = Counter(), Counter(), 0, []
     for repo in repos:
+        name = repo["name"]
+        if repo.get("isFork") and name not in INCLUDE_FORKS:
+            continue
         disk += repo.get("diskUsage") or 0
-        names.append(repo["name"])
+        names.append(name)
         ref = repo.get("defaultBranchRef") or {}
         target = ref.get("target") or {}
         for commit in (target.get("history") or {}).get("nodes", []):

@@ -1,17 +1,16 @@
 <div align="center">
 
 ```
-      ___           ___           ___       ___       ___
-     /\__\         /\  \         /\__\     /\__\     /\  \
-    /:/  /        /::\  \       /:/  /    /:/  /    /::\  \
-   /:/__/        /:/\:\  \     /:/  /    /:/  /    /:/\:\  \
-  /::\  \ ___   /::\~\:\  \   /:/  /    /:/  /    /:/  \:\  \
- /:/\:\  /\__\ /:/\:\ \:\__\ /:/__/    /:/__/    /:/__/ \:\__\
- \/__\:\/:/  / \:\~\:\ \/__/ \:\  \    \:\  \    \:\  \ /:/  /
-      \::/  /   \:\ \:\__\    \:\  \    \:\  \    \:\  /:/  /
-      /:/  /     \:\ \/__/     \:\  \    \:\  \    \:\/:/  /
-     /:/  /       \:\__\        \:\__\    \:\__\    \::/  /
-     \/__/         \/__/         \/__/     \/__/    \/__/
+                                                  
+ mm    mm            mmmm      mmmm               
+ ##    ##            ""##      ""##               
+ ##    ##   m####m     ##        ##       m####m  
+ ########  ##mmmm##    ##        ##      ##"  "## 
+ ##    ##  ##""""""    ##        ##      ##    ## 
+ ##    ##  "##mmmm#    ##mmm     ##mmm   "##mm##" 
+ ""    ""    """""      """"      """"     """"   
+                                                  
+                                                  
 ```
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3200&pause=900&color=00FF41&center=true&vCenter=true&width=520&lines=astronomy+student+%40+BNU;plasma+simulations+%26+fast+radio+bursts;Fortran+%2B+Python+%2B+too+many+dotfiles)](https://git.io/typing-svg)
@@ -77,9 +76,9 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 
 **🐱 My GitHub Data**
 
-> 📦 804.1 MB Used in GitHub's Storage
+> 📦 926.5 MB Used in GitHub's Storage
 > 
-> 🏆 210 Contributions in the Year 2026
+> 🏆 208 Contributions in the Year 2026
 > 
 > 📜 9 Public Repositories (excluding forks)
 > 
@@ -88,38 +87,39 @@ marc@bnu:~$ gh-stats --commits --by-hour --by-weekday --by-language
 **I'm a Night 🦉**
 
 ```text
-🌞 Morning                30 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.64 % 
-🌆 Daytime                111 commits         ██████░░░░░░░░░░░░░░░░░░░   24.56 % 
-🌃 Evening                187 commits         ██████████░░░░░░░░░░░░░░░   41.37 % 
-🌙 Night                  124 commits         ███████░░░░░░░░░░░░░░░░░░   27.43 % 
+🌞 Morning                30 commits          █░░░░░░░░░░░░░░░░░░░░░░░░   05.43 % 
+🌆 Daytime                132 commits         ██████░░░░░░░░░░░░░░░░░░░   23.91 % 
+🌃 Evening                219 commits         ██████████░░░░░░░░░░░░░░░   39.67 % 
+🌙 Night                  171 commits         ████████░░░░░░░░░░░░░░░░░   30.98 % 
 ```
 
 📅 **I'm Most Productive on Monday**
 
 ```text
-Monday                   100 commits         ██████░░░░░░░░░░░░░░░░░░░   22.12 % 
-Tuesday                  83 commits          █████░░░░░░░░░░░░░░░░░░░░   18.36 % 
-Wednesday                66 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.60 % 
-Thursday                 66 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.60 % 
-Friday                   56 commits          ███░░░░░░░░░░░░░░░░░░░░░░   12.39 % 
-Saturday                 29 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.42 % 
-Sunday                   52 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.50 % 
+Monday                   109 commits         █████░░░░░░░░░░░░░░░░░░░░   19.75 % 
+Tuesday                  100 commits         █████░░░░░░░░░░░░░░░░░░░░   18.12 % 
+Wednesday                101 commits         █████░░░░░░░░░░░░░░░░░░░░   18.30 % 
+Thursday                 91 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.49 % 
+Friday                   66 commits          ███░░░░░░░░░░░░░░░░░░░░░░   11.96 % 
+Saturday                 32 commits          █░░░░░░░░░░░░░░░░░░░░░░░░   05.80 % 
+Sunday                   53 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   09.60 % 
 ```
 
 **I Mostly Code in Python**
 
 ```text
-Python                   25,551 lines        ██████████████░░░░░░░░░░░   54.22 % 
-Fortran                  17,550 lines        █████████░░░░░░░░░░░░░░░░   37.24 % 
-Emacs Lisp               1,385 lines         █░░░░░░░░░░░░░░░░░░░░░░░░   02.94 % 
-CMake                    1,151 lines         █░░░░░░░░░░░░░░░░░░░░░░░░   02.44 % 
-Shell                    811 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   01.72 % 
-Lua                      567 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   01.20 % 
-make                     84 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 % 
-DOS Batch                26 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 % 
+Python                   50,183 lines        █████████████████░░░░░░░░   69.19 % 
+Fortran                  17,550 lines        ██████░░░░░░░░░░░░░░░░░░░   24.20 % 
+Emacs Lisp               1,385 lines         ░░░░░░░░░░░░░░░░░░░░░░░░░   01.91 % 
+CMake                    1,151 lines         ░░░░░░░░░░░░░░░░░░░░░░░░░   01.59 % 
+Shell                    1,143 lines         ░░░░░░░░░░░░░░░░░░░░░░░░░   01.58 % 
+Lua                      567 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.78 % 
+MATLAB                   437 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.60 % 
+make                     84 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.12 % 
+DOS Batch                26 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
 ```
 
- Last Updated on 30/08/2026 12:43:39 UTC
+ Last Updated on 30/08/2026 12:54:25 UTC
 
 <!--END_SECTION:waka-->
 
