@@ -46,8 +46,9 @@ marc@bnu:~$ cat /etc/motd
 
 ```console
 marc@bnu:~$ ls -la ~/projects --sort=recent
-total 6
-drwxr-xr-x  research/    empi-fortran/       # EM PIC solver, Fortran
+total 7
+drwxr-xr-x  research/    EMPI-Fortran/       # plasma wave propagation, Fortran
+drwxr-xr-x  research/    EMPi/               # plasma propagation & polarimetry, Python
 drwxr-xr-x  research/    empi-work/          # analysis pipeline, Python
 drwxr-xr-x  research/    pic-tristan/        # Tristan-MP setups
 drwxr-xr-x  teaching/    computing-for-astronomy/
@@ -57,8 +58,8 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 | repo | what it is | stack |
 |:--|:--|:--|
-| [**EMPI-Fortran**](https://github.com/marc-shen/EMPI-Fortran) | Electromagnetic particle-in-cell solver written from scratch | `Fortran` `MPI` |
-| [**EMPi**](https://github.com/marc-shen/EMPi) | Numerical modeling of plasma-induced effects on Fast Radio Bursts | `Jupyter` `Python` |
+| [**EMPI-Fortran**](https://github.com/marc-shen/EMPI-Fortran) | Standalone high-performance plasma wave propagation & polarimetry: ray tracing, Stokes IQUV, dedispersion and RM analysis | `Fortran 2018` `MPI` `OpenMP` `HDF5` |
+| [**EMPi**](https://github.com/marc-shen/EMPi) | Electromagnetic Propagation Imager: Python framework for radio-wave propagation through magnetised plasma, Jones-matrix transport and FRB dynamic spectra | `Python` `NumPy` `MPI` `HDF5` |
 | [**empi-work**](https://github.com/marc-shen/empi-work) | Post-processing & visualization for the EMPi runs | `Python` `NumPy` |
 | [**computing-for-astronomy**](https://github.com/marc-shen/computing-for-astronomy) | *Why Computing for Astronomy?* — notes & lectures | `Makefile` `LaTeX` |
 | [**Dream-Quest**](https://github.com/marc-shen/Dream-Quest) | The way to Kadath — personal blog at [blog.stic.work](https://blog.stic.work) | `Astro` `TS` |

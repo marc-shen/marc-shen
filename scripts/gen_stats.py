@@ -48,20 +48,20 @@ def graphql(query, **variables):
             "User-Agent": USER,
         },
     )
-    for attempt in range(4):
+    for attempt in range(6):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 payload = json.load(r)
             break
         except urllib.error.HTTPError as err:
-            # 5xx 多为偶发，退避后重试；4xx 直接抛出
-            if err.code < 500 or attempt == 3:
+            # 429 / 5xx 退避重试；认证与其他客户端错误直接失败。
+            if (err.code != 429 and err.code < 500) or attempt == 5:
                 raise
-            time.sleep(2 ** attempt)
-        except urllib.error.URLError:
-            if attempt == 3:
+            time.sleep(min(5 * 2 ** attempt, 60))
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 5:
                 raise
-            time.sleep(2 ** attempt)
+            time.sleep(min(5 * 2 ** attempt, 60))
     if "errors" in payload:
         raise RuntimeError(payload["errors"])
     return payload["data"]
@@ -149,7 +149,7 @@ def loc_by_language(names):
         result = subprocess.run(command, capture_output=True, text=True)
         if result.returncode != 0 or not result.stdout.strip():
             print(f"cloc failed: {result.stderr[:400]}", file=sys.stderr)
-            return counts
+            raise RuntimeError("cloc failed; preserving existing README")
         for language, stats in json.loads(result.stdout).items():
             if language in ("header", "SUM"):
                 continue
@@ -190,7 +190,7 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 REPOS_Q = """
 query($login:String!, $cursor:String) {
   user(login:$login) {
-    repositories(first:50, after:$cursor, ownerAffiliations:OWNER) {
+    repositories(first:10, after:$cursor, ownerAffiliations:OWNER) {
       pageInfo { hasNextPage endCursor }
       nodes {
         name

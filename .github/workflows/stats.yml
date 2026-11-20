@@ -2,8 +2,12 @@ name: readme stats
 
 on:
   schedule:
-    - cron: "0 18 * * *"
+    - cron: "23 18 * * *"  # 02:23 Asia/Shanghai
   workflow_dispatch:
+
+concurrency:
+  group: readme-stats-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   update-readme:
@@ -20,7 +24,7 @@ jobs:
 
       - name: install cloc
         run: |
-          curl -sL -o "$RUNNER_TEMP/cloc.pl" \
+          curl --fail --show-error --location --retry 5 --retry-delay 5 -o "$RUNNER_TEMP/cloc.pl" \
             https://github.com/AlDanial/cloc/releases/download/v2.10/cloc-2.10.pl
           perl "$RUNNER_TEMP/cloc.pl" --version
 
