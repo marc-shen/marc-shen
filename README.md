@@ -72,40 +72,40 @@ drwxr-xr-x  web/         marc-shen.github.io/  # songyushen.com, Jekyll
 
 ```console
 marc@bnu:~$ gh-stats --summary
-storage        929.0 MB
-contributions  303 in 2026
+storage        929.1 MB
+contributions  313 in 2026
 public repos   9 (forks excluded)
 member since   2019 (6 years)
 
 marc@bnu:~$ gh-stats --commits --group-by=daypart
-🌞 Morning                30 commits          █░░░░░░░░░░░░░░░░░░░░░░░░   05.06 % 
-🌆 Daytime                136 commits         ██████░░░░░░░░░░░░░░░░░░░   22.93 % 
-🌃 Evening                262 commits         ███████████░░░░░░░░░░░░░░   44.18 % 
-🌙 Night                  165 commits         ███████░░░░░░░░░░░░░░░░░░   27.82 % 
+🌞 Morning                28 commits          █░░░░░░░░░░░░░░░░░░░░░░░░   04.73 % 
+🌆 Daytime                141 commits         ██████░░░░░░░░░░░░░░░░░░░   23.82 % 
+🌃 Evening                261 commits         ███████████░░░░░░░░░░░░░░   44.09 % 
+🌙 Night                  162 commits         ███████░░░░░░░░░░░░░░░░░░   27.36 % 
 
 marc@bnu:~$ gh-stats --commits --group-by=weekday
-Monday                   113 commits         █████░░░░░░░░░░░░░░░░░░░░   19.06 % 
-Tuesday                  111 commits         █████░░░░░░░░░░░░░░░░░░░░   18.72 % 
-Wednesday                84 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.17 % 
-Thursday                 110 commits         █████░░░░░░░░░░░░░░░░░░░░   18.55 % 
-Friday                   76 commits          ███░░░░░░░░░░░░░░░░░░░░░░   12.82 % 
-Saturday                 46 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   07.76 % 
-Sunday                   53 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.94 % 
+Monday                   112 commits         █████░░░░░░░░░░░░░░░░░░░░   18.92 % 
+Tuesday                  121 commits         █████░░░░░░░░░░░░░░░░░░░░   20.44 % 
+Wednesday                81 commits          ███░░░░░░░░░░░░░░░░░░░░░░   13.68 % 
+Thursday                 108 commits         █████░░░░░░░░░░░░░░░░░░░░   18.24 % 
+Friday                   76 commits          ███░░░░░░░░░░░░░░░░░░░░░░   12.84 % 
+Saturday                 45 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   07.60 % 
+Sunday                   49 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   08.28 % 
 
 marc@bnu:~$ cloc --no-web --no-notebooks ~/src
-Python                   58,477 lines        ████████████████░░░░░░░░░   65.32 % 
-Fortran                  20,198 lines        ██████░░░░░░░░░░░░░░░░░░░   22.56 % 
-Emacs Lisp               6,101 lines         ██░░░░░░░░░░░░░░░░░░░░░░░   06.81 % 
-Shell                    1,854 lines         █░░░░░░░░░░░░░░░░░░░░░░░░   02.07 % 
-CMake                    1,246 lines         ░░░░░░░░░░░░░░░░░░░░░░░░░   01.39 % 
-Lua                      572 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.64 % 
-Objective-C              530 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.59 % 
-MATLAB                   437 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.49 % 
+Python                   60,396 lines        ████████████████░░░░░░░░░   65.99 % 
+Fortran                  20,198 lines        ██████░░░░░░░░░░░░░░░░░░░   22.07 % 
+Emacs Lisp               6,101 lines         ██░░░░░░░░░░░░░░░░░░░░░░░   06.67 % 
+Shell                    1,925 lines         █░░░░░░░░░░░░░░░░░░░░░░░░   02.10 % 
+CMake                    1,246 lines         ░░░░░░░░░░░░░░░░░░░░░░░░░   01.36 % 
+Lua                      575 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.63 % 
+Objective-C              530 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.58 % 
+MATLAB                   437 lines           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.48 % 
 make                     84 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.09 % 
 DOS Batch                26 lines            ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
 
 marc@bnu:~$ date -u
-Sun Nov 22 18:29:45 UTC 2026
+Tue Nov 24 18:30:44 UTC 2026
 ```
 
 <!--END_SECTION:waka-->
